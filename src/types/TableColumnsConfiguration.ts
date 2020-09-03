@@ -1,6 +1,8 @@
 import {TableColumnConfiguration} from './TableColumnConfiguration';
 
 /**
- * Table column configuration list.
+ * Table columns configuration as object literal.
  */
-export type TableColumnsConfiguration = TableColumnConfiguration[];
+export type TableColumnsConfiguration = {
+    [key: string]: TableColumnConfiguration
+};

@@ -1,18 +1,19 @@
 import React from 'react';
 import styled from 'styled-components'
 import {TableRow} from './TableRow';
-import {TableColumnsConfiguration} from '../../types/TableColumnsConfiguration';
-import {TableCell} from './TableCell';
 import {TableHeaders} from './TableHeaders';
+import {TableDataRows} from './TableDataRows';
+import {TableColumnsConfiguration} from '../../types/TableColumnsConfiguration';
+import {TableData} from '../../types/TableData';
 
-export type TableProps = {
+export type TableProps<T extends TableData> = {
     readonly columnsConfig: TableColumnsConfiguration;
-    readonly data: any;
+    readonly data: TableData[];
 }
 
 const StyledTable = styled.table``;
 
-export function Table(props: TableProps) {
+export function Table<T extends TableData>(props: TableProps<T>) {
     return (
         <StyledTable>
             <thead>
@@ -21,14 +22,7 @@ export function Table(props: TableProps) {
                 </TableRow>
             </thead>
             <tbody>
-                <TableRow>
-                    <TableCell>Cell 1</TableCell>
-                    <TableCell>Cell 2</TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell>Cell 1</TableCell>
-                    <TableCell>Cell 2</TableCell>
-                </TableRow>
+                <TableDataRows data={props.data} />
             </tbody>
         </StyledTable>
     )
