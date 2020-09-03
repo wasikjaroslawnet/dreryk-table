@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 export type TableRowProps = React.PropsWithChildren<{}>
 
-const StyledTableRow = styled.td``;
+const StyledTableRow = styled.tr``;
 
 export function TableRow(props: TableRowProps) {
     return (
