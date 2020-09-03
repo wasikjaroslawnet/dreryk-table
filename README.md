@@ -18,6 +18,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - TypeScript
 - Styled components
 
+- The table component should take as parameters:
+  - [ ] column configuration - each column is described by the displayed name and width
+  - [ ] data - text, static data, which are displayed in individual table cells
+
 ## How to start application
 
 You must have node.js installed.
