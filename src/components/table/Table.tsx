@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
-import {TableHeader} from "./TableHeader";
+import {TableHeader} from './TableHeader';
+import {TableRow} from './TableRow';
 
 export type TableProps = {
     readonly columnsConfig: any;
@@ -16,7 +17,7 @@ export function Table(props: TableProps) {
                 <TableHeader onClick={() => console.log('sort')}>Header</TableHeader>
             </tr>
             <tr>
-                <td>Row</td>
+                <TableRow>Row</TableRow>
             </tr>
         </StyledTable>
     )
