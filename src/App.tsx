@@ -1,12 +1,15 @@
 import React from 'react';
-import './App.css';
+import styled from 'styled-components';
 
-function App() {
+const StyledApp = styled.div`
+  text-align: center;
+`;
+
+export function App() {
   return (
-    <div className="App">
+    <StyledApp>
       App
-    </div>
+    </StyledApp>
   );
 }
 
-export default App;
