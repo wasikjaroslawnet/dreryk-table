@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components'
-import {TableHeader} from './TableHeader';
 import {TableRow} from './TableRow';
 import {TableColumnsConfiguration} from '../../types/TableColumnsConfiguration';
 import {TableCell} from './TableCell';
+import {TableHeaders} from './TableHeaders';
 
 export type TableProps = {
     readonly columnsConfig: TableColumnsConfiguration;
@@ -17,8 +17,7 @@ export function Table(props: TableProps) {
         <StyledTable>
             <thead>
                 <TableRow>
-                    <TableHeader colWidth={100} onClick={() => console.log('sort')}>Header</TableHeader>
-                    <TableHeader colWidth={200} onClick={() => console.log('sort')}>Header 2</TableHeader>
+                    <TableHeaders columnsConfig={props.columnsConfig} />
                 </TableRow>
             </thead>
             <tbody>

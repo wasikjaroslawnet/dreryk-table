@@ -18,7 +18,11 @@ const columns: TableColumnsConfiguration = [
     },
     {
         name: 'Header 2',
-        width: 200
+        width: 250
+    },
+    {
+        name: 'Header 3',
+        width: 100
     }
 ];
 
