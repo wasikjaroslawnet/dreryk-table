@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Table} from "../table/Table";
+import {SalariesEmployeesTable} from '../samples/SalariesEmployeesTable';
 
 const StyledApp = styled.div`
   text-align: center;
@@ -9,7 +9,7 @@ const StyledApp = styled.div`
 export function App() {
   return (
     <StyledApp>
-      <Table columnsConfig={null} data={null}/>
+      <SalariesEmployeesTable />
     </StyledApp>
   );
 }
