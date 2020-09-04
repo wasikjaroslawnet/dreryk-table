@@ -1,0 +1,16 @@
+[
+  {
+    "employee": "John Smith",
+    "september2020": "$4000",
+    "october2020": "$3200",
+    "november2020": "$2800",
+    "december2020": "$4500"
+  },
+  {
+    "employee": "Alex morgan",
+    "september2020": "$2000",
+    "october2020": "$3800",
+    "november2020": "$300",
+    "december2020": "$4000"
+  }
+]

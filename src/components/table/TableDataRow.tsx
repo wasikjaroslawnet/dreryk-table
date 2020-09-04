@@ -4,23 +4,24 @@ import {TableRow} from './TableRow';
 import {TableCell} from './TableCell';
 
 export type TableDataRowProps = {
-    readonly data: TableData;
+    readonly columns: ReadonlyArray<string>;
+    readonly data: TableData<any>;
 }
 
 export function TableDataRow(props: TableDataRowProps) {
     return (
         <TableRow>
             <>
-                {Object.keys(props.data).map((key) => {
-                    const value = props.data[key];
+                {props.columns.map((column) => {
+                    const value = props.data[column];
 
                     return (
-                        <TableCell key={key}>
+                        <TableCell key={column}>
                             {value}
                         </TableCell>
                     )
                 })}
             </>
-            </TableRow>
+        </TableRow>
     )
 }

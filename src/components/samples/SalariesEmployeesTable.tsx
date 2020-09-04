@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components'
 import {Table} from '../table/Table';
 import {TableColumnsConfiguration} from '../../types/TableColumnsConfiguration';
-import {TableData} from "../../types/TableData";
+import data from './data.json';
 
 const StyledTableContainer = styled.div`
   text-align: center;
@@ -12,36 +12,34 @@ const StyledTableName = styled.h1`
   font-weight: bold;
 `;
 
-const columns: TableColumnsConfiguration = {
-    first: {
-        name: 'Header 1',
+const columnsConfig: TableColumnsConfiguration = {
+    employee: {
+        name: 'Employee',
+        width: 300
+    },
+    september2020: {
+        name: 'September 2020',
         width: 100
     },
-    second: {
-        name: 'Header 2',
-        width: 250
+    october2020: {
+        name: 'October 2020',
+        width: 100
     },
-    third: {
-        name: 'Header 3',
+    november2020: {
+        name: 'November 2020',
+        width: 100
+    },
+    december2020: {
+        name: 'December 2020',
         width: 100
     }
 };
-
-const data: TableData[] = [{
-    first: 'First',
-    second: 'Second',
-    third: 'Third'
-}, {
-    first: 'First 2',
-    second: 'Second 2',
-    third: 'Third 2'
-}];
 
 export function SalariesEmployeesTable() {
     return (
         <StyledTableContainer>
             <StyledTableName>Salaries of employees</StyledTableName>
-            <Table columnsConfig={columns} data={data}/>
+            <Table columnsConfig={columnsConfig} data={data}/>
         </StyledTableContainer>
     )
 }
