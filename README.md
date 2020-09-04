@@ -14,13 +14,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Technical requirements
 
-- Create react app
-- TypeScript
-- Styled components
+- [x] Create react app
+- [x] TypeScript
+- [x] Styled components
 
 - The table component should take as parameters:
-  - [ ] column configuration - each column is described by the displayed name and width
-  - [ ] data - text, static data, which are displayed in individual table cells
+  - [x] column configuration - each column is described by the displayed name and width
+  - [x] data - text, static data, which are displayed in individual table cells
 
 ## How to start application
 
