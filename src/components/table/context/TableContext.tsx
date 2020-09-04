@@ -1,4 +1,4 @@
-import React, {useCallback, useMemo, useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import {createContext, PropsWithChildren} from 'react';
 import {TableProps} from '../types/TableProps';
 import {TableColumnsConfiguration} from "../types/TableColumnsConfiguration";
@@ -39,7 +39,6 @@ export function TableContextProvider(props: TableContextProviderProps) {
     const sortAsc = useCallback((columnId: string) => {
         setData(prevData => prevData.sort(sortAscAlphabet(columnId)));
         setSortedBy(columnId);
-        console.log(data);
     }, [setData, setSortedBy]);
 
     return (

@@ -1,6 +1,6 @@
 import {MutableRefObject, useLayoutEffect, useState} from "react";
 
-export function useFindPrimaryTable(ref: MutableRefObject<HTMLTableHeaderCellElement | null>) {
+export function useFindPrimaryTable(ref: MutableRefObject<HTMLElement | null>) {
     const [primaryTable, setPrimaryTable] = useState<HTMLTableElement | null>(null);
 
     useLayoutEffect(() => {

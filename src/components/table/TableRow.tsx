@@ -1,14 +1,18 @@
 import React from 'react';
 import styled from 'styled-components'
 
-export type TableRowProps = React.PropsWithChildren<{}>
+type TableRowProps = React.PropsWithChildren<{
+    height?: number;
+}>
 
-const StyledTableRow = styled.tr``;
+const StyledTableRow = styled.tr<TableRowProps>`
+  height: ${props => props.height ? `${props.height}px` : 'inherit'};
+`;
 
-export function TableRow(props: TableRowProps) {
+export const TableRow = React.forwardRef<HTMLElement, TableRowProps>((props, ref) => {
     return (
-        <StyledTableRow>
+        <StyledTableRow ref={ref as any} height={props.height}>
             {props.children}
         </StyledTableRow>
     )
-}
+});

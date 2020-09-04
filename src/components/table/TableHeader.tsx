@@ -15,6 +15,7 @@ type TableHeaderProps = React.PropsWithChildren<{
 
 const StyledTableHeader = styled.th<TableHeaderProps>`
   min-width: ${props => `${props.colWidth}px`};
+  width: ${props => `${props.colWidth}px`};
   max-width: ${props => `${props.colWidth}px`};
   overflow-wrap: anywhere;
   cursor: pointer;

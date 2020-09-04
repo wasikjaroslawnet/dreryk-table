@@ -13,5 +13,5 @@ export function sumDollars(data: any[] | undefined): string {
             return result + nextValue;
         }, 0);
 
-    return `\$${result}`;
+    return `$${result}`;
 }

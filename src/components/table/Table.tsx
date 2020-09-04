@@ -1,4 +1,4 @@
-import React, {useMemo} from 'react';
+import React from 'react';
 import styled from 'styled-components'
 import {TableRow} from './TableRow';
 import {TableHeaders} from './TableHeaders';
@@ -11,7 +11,7 @@ import {TableContextProvider} from './context/TableContext';
 import {TableSummaryRows} from './TableSummaryRows';
 
 type StyledTableProps = {
-    readonly display?: 'inline-block';
+    readonly display?: 'inline';
 }
 
 const StyledTable = styled.table<StyledTableProps>`
@@ -30,7 +30,7 @@ export function Table<T extends TableColumnsConfiguration, U extends TableData<T
     return (
         <TableContextProvider columns={columns} data={data}>
             <StyledTableContainer>
-                <StyledTable display={'inline-block'}>
+                <StyledTable display={'inline'}>
                     <thead>
                     <TableRow>
                         <TableHeaders />

@@ -1,4 +1,4 @@
-import React, {useContext, useMemo} from 'react';
+import React, {useContext} from 'react';
 import {TableDataRow} from './TableDataRow';
 import {TableContext} from './context/TableContext';
 
@@ -7,9 +7,9 @@ export function TableDataRows() {
 
     return (
         <>
-            {data.map((cellData) => {
+            {data.map((cellData, i) => {
                 return (
-                    <TableDataRow data={cellData} />
+                    <TableDataRow key={i} index={i} data={cellData} />
                 )
             })}
         </>

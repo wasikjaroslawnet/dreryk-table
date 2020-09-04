@@ -1,6 +1,6 @@
 import React, {useRef} from 'react';
 import styled from 'styled-components'
-import {usePrimaryTableHeaderHeight} from "./hooks/usePrimaryTableHeaderHeight";
+import {usePrimaryTableRowHeight} from './hooks/usePrimaryTableRowHeight';
 import {TableRow} from "./TableRow";
 
 type TableSummaryHeaderProps = React.PropsWithChildren<{
@@ -27,7 +27,7 @@ const StyledTableSummaryHeader = styled.th<TableSummaryHeaderProps>`
 
 export function TableSummaryHeader(props: TableSummaryHeaderProps) {
     const ref = useRef<HTMLTableHeaderCellElement>(null);
-    const cellHeight = usePrimaryTableHeaderHeight(ref);
+    const cellHeight = usePrimaryTableRowHeight(ref, 0);
 
     if (props.cellWidth <= 0) {
         throw new Error(`The column width must be a positive numerical value. (${props.cellWidth})`);

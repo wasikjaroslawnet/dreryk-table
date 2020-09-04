@@ -6,6 +6,7 @@ import {TableContext} from "./context/TableContext";
 import {TableColumnsConfiguration} from "./types/TableColumnsConfiguration";
 
 type TableDataRowProps = {
+    index: number;
     data: TableData<TableColumnsConfiguration>
 };
 
