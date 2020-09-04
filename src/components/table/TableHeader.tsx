@@ -17,6 +17,7 @@ const StyledTableHeader = styled.th<TableHeaderProps>`
   min-width: ${props => `${props.colWidth}px`};
   width: ${props => `${props.colWidth}px`};
   max-width: ${props => `${props.colWidth}px`};
+  //noinspection CssInvalidPropertyValue Works with chrome/firefox/edge
   overflow-wrap: anywhere;
   cursor: pointer;
   background-color: ${props => props.highlight ? 'lightgray' : 'inherit'};
