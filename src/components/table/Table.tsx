@@ -5,7 +5,6 @@ import {TableHeaders} from './TableHeaders';
 import {TableDataRows} from './TableDataRows';
 import {TableColumnsConfiguration} from '../../types/TableColumnsConfiguration';
 import {TableData} from '../../types/TableData';
-import {TableHeader} from "./TableHeader";
 import {TableCell} from "./TableCell";
 import {TableSummaryHeader} from "./TableSummaryHeader";
 
@@ -31,7 +30,7 @@ const StyledTableContainer = styled.div`
 
 export function Table<T extends TableColumnsConfiguration, U extends TableData<T>[]>(props: TableProps<T, U>) {
     const columns = useMemo(() =>
-        Object.keys(props.columnsConfig),
+            Object.keys(props.columnsConfig),
         [props.columnsConfig]
     );
 
@@ -40,26 +39,26 @@ export function Table<T extends TableColumnsConfiguration, U extends TableData<T
             <StyledTable display={'inline-block'}>
                 <thead>
                 <TableRow>
-                    <TableHeaders columnsConfig={props.columnsConfig} />
+                    <TableHeaders columnsConfig={props.columnsConfig}/>
                 </TableRow>
                 </thead>
                 <tbody>
-                    <TableDataRows columns={columns} data={props.data} />
+                <TableDataRows columns={columns} data={props.data}/>
                 </tbody>
             </StyledTable>
             <StyledTable>
-                        <TableSummaryHeader cellWidth={200}>
-                            Summary
-                        </TableSummaryHeader>
+                <TableSummaryHeader cellWidth={200}>
+                    Summary
+                </TableSummaryHeader>
                 <tbody>
                 {props.data.map((row) => {
-                  return (
-                      <TableRow>
-                          <TableCell>
-                              {Object.values(row).filter(v => Boolean(v)).length}
-                          </TableCell>
-                      </TableRow>
-                  )
+                    return (
+                        <TableRow>
+                            <TableCell>
+                                {Object.values(row).filter(v => Boolean(v)).length}
+                            </TableCell>
+                        </TableRow>
+                    )
                 })}
                 </tbody>
             </StyledTable>

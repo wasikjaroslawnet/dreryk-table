@@ -2,13 +2,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Description of the task
 
-- [ ] The user wants to view text data in tabular form.
-- [ ] The table should consist of from one header row and multiple data rows.
-- [ ] The columns in the table have a specific width.
-- [ ] The columns may not fit on the screen and user will want to use a horizontal scroll.
-- [ ] The last column of data is some kind of summary of a given row and the user wants it to be always visible
-  - [ ] The column is not subject to the rules of horizontal shifting and does not obscure the other columns
-  - [ ] If the table fits completely into the screen, the column behaves like the other columns and is an integral part of table.
+- [x] The user wants to view text data in tabular form.
+- [x] The table should consist of from one header row and multiple data rows.
+- [x] The columns in the table have a specific width.
+- [x] The columns may not fit on the screen and user will want to use a horizontal scroll.
+- [x] The last column of data is some kind of summary of a given row and the user wants it to be always visible
+  - [x] The column is not subject to the rules of horizontal shifting and does not obscure the other columns
+  - [x] If the table fits completely into the screen, the column behaves like the other columns and is an integral part of table.
 - [ ] After clicking on the table header, the data are sorted alphabetically by the values in the clicked column.
   - [ ] The operation is performed by animating the appearance of sorted data.
 
