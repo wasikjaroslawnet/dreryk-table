@@ -7,5 +7,5 @@ export type TableData<T> = {
      * In order to force the data for each field to be required,
      * remove undefined from union type.
      */
-    readonly [key in keyof T]: string;
+    readonly [key in keyof T]?: string | undefined;
 }

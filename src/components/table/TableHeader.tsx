@@ -5,7 +5,7 @@ type TableHeaderProps = React.PropsWithChildren<{
     /**
      * Event handler for user click event on table header.
      */
-    readonly onClick: (e: React.MouseEvent<HTMLTableHeaderCellElement>) => void;
+    readonly onClick?: (e: React.MouseEvent<HTMLTableHeaderCellElement>) => void;
     /**
      * The width of the column expressed in pixels.
      */

@@ -5,14 +5,28 @@ import {TableHeaders} from './TableHeaders';
 import {TableDataRows} from './TableDataRows';
 import {TableColumnsConfiguration} from '../../types/TableColumnsConfiguration';
 import {TableData} from '../../types/TableData';
+import {TableHeader} from "./TableHeader";
+import {TableCell} from "./TableCell";
+import {TableSummaryHeader} from "./TableSummaryHeader";
 
 type TableProps<T extends TableColumnsConfiguration, U extends TableData<T>[]> = {
     readonly columnsConfig: T;
     readonly data: U;
 }
 
-const StyledTable = styled.table`
+type StyledTableProps = {
+    readonly display?: 'inline-block';
+}
+
+const StyledTable = styled.table<StyledTableProps>`
+  display: ${props => props.display || 'inline-table'};
   background-color: white;
+  overflow-x: auto;
+`;
+
+const StyledTableContainer = styled.div`
+  display: flex;
+  flex-direction: row;
 `;
 
 export function Table<T extends TableColumnsConfiguration, U extends TableData<T>[]>(props: TableProps<T, U>) {
@@ -22,15 +36,33 @@ export function Table<T extends TableColumnsConfiguration, U extends TableData<T
     );
 
     return (
-        <StyledTable>
-            <thead>
-            <TableRow>
-                <TableHeaders columnsConfig={props.columnsConfig} />
-            </TableRow>
-            </thead>
-            <tbody>
-                <TableDataRows columns={columns} data={props.data} />
-            </tbody>
-        </StyledTable>
+        <StyledTableContainer>
+            <StyledTable display={'inline-block'}>
+                <thead>
+                <TableRow>
+                    <TableHeaders columnsConfig={props.columnsConfig} />
+                </TableRow>
+                </thead>
+                <tbody>
+                    <TableDataRows columns={columns} data={props.data} />
+                </tbody>
+            </StyledTable>
+            <StyledTable>
+                        <TableSummaryHeader cellWidth={200}>
+                            Summary
+                        </TableSummaryHeader>
+                <tbody>
+                {props.data.map((row) => {
+                  return (
+                      <TableRow>
+                          <TableCell>
+                              {Object.values(row).filter(v => Boolean(v)).length}
+                          </TableCell>
+                      </TableRow>
+                  )
+                })}
+                </tbody>
+            </StyledTable>
+        </StyledTableContainer>
     )
 }
