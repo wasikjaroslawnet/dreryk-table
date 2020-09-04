@@ -20,6 +20,7 @@ const StyledTableHeader = styled.th<TableHeaderProps>`
   overflow-wrap: anywhere;
   cursor: pointer;
   background-color: ${props => props.highlight ? 'lightgray' : 'inherit'};
+  border-bottom: 2px solid black;
 `;
 
 export function TableHeader(props: TableHeaderProps) {

@@ -15,7 +15,6 @@ type StyledTableHeadProps = {
 }
 
 const StyledTableHead = styled.thead<StyledTableHeadProps>`
-  display: block;
   height: ${props => `${props.cellHeight}px`};
   max-height: ${props => `${props.cellHeight}px`};
 `
@@ -23,6 +22,7 @@ const StyledTableHead = styled.thead<StyledTableHeadProps>`
 const StyledTableSummaryHeader = styled.th<TableSummaryHeaderProps>`
   min-width: ${props => `${props.cellWidth}px`};
   max-width: ${props => `${props.cellWidth}px`};
+  border-bottom: 2px solid black;
 `;
 
 export function TableSummaryHeader(props: TableSummaryHeaderProps) {

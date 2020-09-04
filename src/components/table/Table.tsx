@@ -18,6 +18,7 @@ const StyledTable = styled.table<StyledTableProps>`
   display: ${props => props.display || 'inline-table'};
   background-color: white;
   overflow-x: auto;
+  border: 1px solid gray;
 `;
 
 const StyledTableContainer = styled.div`

@@ -12,7 +12,7 @@ const StyledTableName = styled.h1`
   font-weight: bold;
 `;
 
-const columnsConfig: TableColumnsConfiguration = {
+const columns: TableColumnsConfiguration = {
     employee: {
         name: 'Employee',
         width: 300
@@ -39,7 +39,7 @@ export function SalariesEmployeesTable() {
     return (
         <StyledTableContainer>
             <StyledTableName>Salaries of employees</StyledTableName>
-            <Table columns={columnsConfig} data={data}/>
+            <Table columns={columns} data={data}/>
         </StyledTableContainer>
     )
 }
