@@ -39,7 +39,7 @@ export function SalariesEmployeesTable() {
     return (
         <StyledTableContainer>
             <StyledTableName>Salaries of employees</StyledTableName>
-            <Table columnsConfig={columnsConfig} data={data}/>
+            <Table columns={columnsConfig} data={data}/>
         </StyledTableContainer>
     )
 }

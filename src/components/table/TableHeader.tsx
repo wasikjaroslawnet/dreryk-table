@@ -10,14 +10,15 @@ type TableHeaderProps = React.PropsWithChildren<{
      * The width of the column expressed in pixels.
      */
     readonly colWidth: number;
+    readonly highlight: boolean;
 }>
 
-type StyledTableHeaderProps = Pick<TableHeaderProps, 'colWidth'>;
-
-const StyledTableHeader = styled.th<StyledTableHeaderProps>`
+const StyledTableHeader = styled.th<TableHeaderProps>`
   min-width: ${props => `${props.colWidth}px`};
   max-width: ${props => `${props.colWidth}px`};
   overflow-wrap: anywhere;
+  cursor: pointer;
+  background-color: ${props => props.highlight ? 'lightgray' : 'inherit'};
 `;
 
 export function TableHeader(props: TableHeaderProps) {
@@ -26,7 +27,7 @@ export function TableHeader(props: TableHeaderProps) {
     }
 
     return (
-        <StyledTableHeader colWidth={props.colWidth} onClick={props.onClick}>
+        <StyledTableHeader {...props}>
             {props.children}
         </StyledTableHeader>
     )

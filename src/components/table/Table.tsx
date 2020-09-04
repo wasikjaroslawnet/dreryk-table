@@ -5,13 +5,10 @@ import {TableHeaders} from './TableHeaders';
 import {TableDataRows} from './TableDataRows';
 import {TableColumnsConfiguration} from './types/TableColumnsConfiguration';
 import {TableData} from './types/TableData';
-import {TableCell} from "./TableCell";
-import {TableSummaryHeader} from "./TableSummaryHeader";
-
-type TableProps<T extends TableColumnsConfiguration, U extends TableData<T>[]> = {
-    readonly columnsConfig: T;
-    readonly data: U;
-}
+import {TableSummaryHeader} from './TableSummaryHeader';
+import {TableProps} from './TableProps';
+import {TableContextProvider} from './context/TableContext';
+import {TableSummaryRows} from './TableSummaryRows';
 
 type StyledTableProps = {
     readonly display?: 'inline-block';
@@ -29,40 +26,29 @@ const StyledTableContainer = styled.div`
 `;
 
 export function Table<T extends TableColumnsConfiguration, U extends TableData<T>[]>(props: TableProps<T, U>) {
-
-    const columns = useMemo(() =>
-            Object.keys(props.columnsConfig),
-        [props.columnsConfig]
-    );
-
+    const {columns, data} = props;
     return (
-        <StyledTableContainer>
-            <StyledTable display={'inline-block'}>
-                <thead>
-                <TableRow>
-                    <TableHeaders columnsConfig={props.columnsConfig}/>
-                </TableRow>
-                </thead>
-                <tbody>
-                <TableDataRows columns={columns} data={props.data}/>
-                </tbody>
-            </StyledTable>
-            <StyledTable>
-                <TableSummaryHeader cellWidth={200}>
-                    Summary
-                </TableSummaryHeader>
-                <tbody>
-                {props.data.map((row) => {
-                    return (
-                        <TableRow>
-                            <TableCell>
-                                {Object.values(row).filter(v => Boolean(v)).length}
-                            </TableCell>
-                        </TableRow>
-                    )
-                })}
-                </tbody>
-            </StyledTable>
-        </StyledTableContainer>
+        <TableContextProvider columns={columns} data={data}>
+            <StyledTableContainer>
+                <StyledTable display={'inline-block'}>
+                    <thead>
+                    <TableRow>
+                        <TableHeaders />
+                    </TableRow>
+                    </thead>
+                    <tbody>
+                    <TableDataRows />
+                    </tbody>
+                </StyledTable>
+                <StyledTable>
+                    <TableSummaryHeader cellWidth={200}>
+                        Summary
+                    </TableSummaryHeader>
+                    <TableSummaryRows />
+                </StyledTable>
+            </StyledTableContainer>
+        </TableContextProvider>
     )
 }
+
+

@@ -1,20 +1,21 @@
-import React from 'react';
-import {TableColumnsConfiguration} from './types/TableColumnsConfiguration';
+import React, {useContext} from 'react';
 import {TableHeader} from './TableHeader';
+import {TableContext} from './context/TableContext';
 
-type TableHeadersProps = {
-    readonly columnsConfig: TableColumnsConfiguration;
-}
+export function TableHeaders() {
+    const {columns, sortAsc, sortedBy} = useContext(TableContext);
 
-export function TableHeaders(props: TableHeadersProps) {
     return (
         <>
-            {Object.keys(props.columnsConfig).map((key) => {
-                const config = props.columnsConfig[key];
+            {Object.keys(columns).map((key: string) => {
+                const config = columns[key];
 
                 return (
-                    <TableHeader key={key} onClick={() => console.log('sort')}
-                                 colWidth={config.width}>
+                    <TableHeader
+                        key={key}
+                        onClick={() => sortAsc(key)}
+                        colWidth={config.width}
+                        highlight={sortedBy === key}>
                         {config.name}
                     </TableHeader>
                 )

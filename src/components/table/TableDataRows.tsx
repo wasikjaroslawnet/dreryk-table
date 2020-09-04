@@ -1,18 +1,15 @@
-import React from 'react';
-import {TableData} from "./types/TableData";
-import {TableDataRow} from "./TableDataRow";
+import React, {useContext, useMemo} from 'react';
+import {TableDataRow} from './TableDataRow';
+import {TableContext} from './context/TableContext';
 
-type TableDataRowsProps = {
-    readonly columns: Array<string>;
-    readonly data: Array<TableData<any>>;
-}
+export function TableDataRows() {
+    const {data} = useContext(TableContext);
 
-export function TableDataRows(props: TableDataRowsProps) {
     return (
         <>
-            {props.data.map((data) => {
+            {data.map((cellData) => {
                 return (
-                    <TableDataRow columns={props.columns} data={data} />
+                    <TableDataRow data={cellData} />
                 )
             })}
         </>
