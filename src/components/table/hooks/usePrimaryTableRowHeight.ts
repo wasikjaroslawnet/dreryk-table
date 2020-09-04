@@ -12,7 +12,7 @@ export function usePrimaryTableRowHeight(ref: MutableRefObject<HTMLElement | nul
                 setHeight(theadElement.offsetHeight);
             }
         }
-    }, [primaryTable]);
+    }, [primaryTable, index]);
 
     return height;
 }
