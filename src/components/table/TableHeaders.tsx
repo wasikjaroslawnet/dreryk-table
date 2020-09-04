@@ -1,5 +1,5 @@
 import React from 'react';
-import {TableColumnsConfiguration} from '../../types/TableColumnsConfiguration';
+import {TableColumnsConfiguration} from './types/TableColumnsConfiguration';
 import {TableHeader} from './TableHeader';
 
 type TableHeadersProps = {

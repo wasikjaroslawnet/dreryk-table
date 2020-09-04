@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import {Table} from '../table/Table';
-import {TableColumnsConfiguration} from '../../types/TableColumnsConfiguration';
+import {TableColumnsConfiguration} from '../table/types/TableColumnsConfiguration';
 import data from './data.json';
 
 const StyledTableContainer = styled.div`

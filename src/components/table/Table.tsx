@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import {TableRow} from './TableRow';
 import {TableHeaders} from './TableHeaders';
 import {TableDataRows} from './TableDataRows';
-import {TableColumnsConfiguration} from '../../types/TableColumnsConfiguration';
-import {TableData} from '../../types/TableData';
+import {TableColumnsConfiguration} from './types/TableColumnsConfiguration';
+import {TableData} from './types/TableData';
 import {TableCell} from "./TableCell";
 import {TableSummaryHeader} from "./TableSummaryHeader";
 
@@ -29,6 +29,7 @@ const StyledTableContainer = styled.div`
 `;
 
 export function Table<T extends TableColumnsConfiguration, U extends TableData<T>[]>(props: TableProps<T, U>) {
+
     const columns = useMemo(() =>
             Object.keys(props.columnsConfig),
         [props.columnsConfig]

@@ -1,5 +1,5 @@
 import React from 'react';
-import {TableData} from "../../types/TableData";
+import {TableData} from "./types/TableData";
 import {TableDataRow} from "./TableDataRow";
 
 type TableDataRowsProps = {
