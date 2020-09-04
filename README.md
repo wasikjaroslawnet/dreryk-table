@@ -9,7 +9,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [x] The last column of data is some kind of summary of a given row and the user wants it to be always visible
   - [x] The column is not subject to the rules of horizontal shifting and does not obscure the other columns
   - [x] If the table fits completely into the screen, the column behaves like the other columns and is an integral part of table.
-- [ ] After clicking on the table header, the data are sorted alphabetically by the values in the clicked column.
+- [X] After clicking on the table header, the data are sorted alphabetically by the values in the clicked column.
   - [ ] The operation is performed by animating the appearance of sorted data.
 
 ## Technical requirements

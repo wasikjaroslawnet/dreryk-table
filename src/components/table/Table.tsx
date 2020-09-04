@@ -6,7 +6,7 @@ import {TableDataRows} from './TableDataRows';
 import {TableColumnsConfiguration} from './types/TableColumnsConfiguration';
 import {TableData} from './types/TableData';
 import {TableSummaryHeader} from './TableSummaryHeader';
-import {TableProps} from './TableProps';
+import {TableProps} from './types/TableProps';
 import {TableContextProvider} from './context/TableContext';
 import {TableSummaryRows} from './TableSummaryRows';
 

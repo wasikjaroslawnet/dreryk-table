@@ -1,6 +1,6 @@
 import React, {useCallback, useMemo, useState} from 'react';
 import {createContext, PropsWithChildren} from 'react';
-import {TableProps} from '../TableProps';
+import {TableProps} from '../types/TableProps';
 import {TableColumnsConfiguration} from "../types/TableColumnsConfiguration";
 import {TableData} from "../types/TableData";
 
